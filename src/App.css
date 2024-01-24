@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root {
+    width: 85%;
+    margin-bottom: 200px;
+}
+
+#heading {
+    margin: 100px 0;
+    font-size: clamp(2.8rem, 0.75rem + 5vw, 4.37rem);
+    text-align: center;
+}
+
+/* ====================    LOADING    ==================== */
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle {
+    width: 70px;
+    height: 70px;
+    border: 7px solid black;
+    border-radius: 50%;
+    border-right: 7px solid white;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ====================    COUNTRIES    ==================== */
+.headings {
+    text-align: center;
+    font-size: clamp(1.6rem, 0.75rem + 2vw, 2.81rem);
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #e3f2fd;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.list-countries {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.country {
+    width: 170px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.flag {
+    width: 100%;
+    aspect-ratio: 2/1.1;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 10px;
+}
+
+p {
+    font-weight: bold;
+}
+
+/* ====================    MODAL    ==================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(173, 216, 230, 0.7);
+    backdrop-filter: blur(20px);
+}
+
+.modal-info {
+    width: 550px;
+    position: relative;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-img {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    margin-bottom: 30px;
+}
+
+.country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h3 {
+    font-weight: lighter;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-left: 30px;
+}
+
+.modalBTN {
+    position: absolute;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: aliceblue;
+    top: -60px;
+    right: 0px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ====================    MEDIA    ==================== */
+@media only screen and (min-width: 2800px) {
+    #root {
+        width: 2300px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #root {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 795px) {
+    .country {
+        width: 140px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-info {
+        width: 90%;
+    }
+}
